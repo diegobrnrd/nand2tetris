@@ -1,0 +1,68 @@
+class DesafioNumerico {
+    function void main() {
+        var int numero, multiplicador, resultado, palpite, tentativas, seed;
+
+        do Screen.clearScreen();
+        do Output.moveCursor(0, 0);
+
+        let seed = RandSeed.getSeed();
+        do Random.setSeed(seed);
+
+        let numero = Random.randRange(9) + 1;
+
+        let multiplicador = Random.randRange(3) + 1;
+
+        let resultado = Math.multiply(numero, (multiplicador + 1));
+
+        let tentativas = 0;
+
+        while (tentativas < 2) {
+            do Output.printString("Qual e o ");
+            if (multiplicador = 1) {
+                do Output.printString("dobro");
+            } else {
+                if (multiplicador = 2) {
+                    do Output.printString("triplo");
+                } else {
+                    if (multiplicador = 3) {
+                        do Output.printString("quadruplo");
+                    } else {
+                        if (multiplicador = 4) {
+                            do Output.printString("quintuplo");
+                        }
+                    }
+                }
+            }
+
+            do Output.printString(" de ");
+            do Output.printInt(numero);
+            do Output.printString("? ");
+            let palpite = Keyboard.readInt("");
+
+            if (palpite = resultado) {
+                do Output.printString("Parabens. Voce acertou.");
+                do Output.println();
+                do Output.println();
+                do Output.printString("Pressione qualquer tecla para voltar ao MENU. ");
+                do Keyboard.readChar();
+                return;
+            } else {
+                do Output.printString("Voce errou.");
+                do Output.println();
+                do Output.println();
+            }
+
+            let tentativas = tentativas + 1;
+        }
+
+        do Output.printString("Fim do jogo.");
+        do Output.println();
+        do Output.printString("O resultado correto era ");
+        do Output.printInt(resultado);
+        do Output.println();
+        do Output.printString("Pressione qualquer tecla para voltar ao MENU. ");
+        do Keyboard.readChar();
+
+        return;
+    }
+}

@@ -1,0 +1,27 @@
+class GerarTabuadaMul {
+   function void main() {
+      var int numero;
+      var int i;
+      
+      do Screen.clearScreen();
+      do Output.moveCursor(0, 0);
+      
+      let numero = Keyboard.readInt("Tabuada do: ");
+      
+      let i = 1;
+      do Output.println();
+      while (i < 11) {
+         do Output.printInt(numero);
+         do Output.printString(" x ");
+         do Output.printInt(i);
+         do Output.printString(" = ");
+         do Output.printInt(Math.multiply(numero, i));
+         do Output.println();
+         let i = i + 1;
+      }
+      do Output.println();
+      do Output.printString("Pressione qualquer tecla para voltar ao MENU. ");
+      do Keyboard.readChar();
+      return;
+   }
+}

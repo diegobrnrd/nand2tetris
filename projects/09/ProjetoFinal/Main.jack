@@ -1,0 +1,71 @@
+class Main {
+   function void main() {
+      var int escolha;
+
+      while (true) {
+         do Screen.clearScreen();
+         do Output.moveCursor(0, 0);
+         do Output.printString("===== MENU PRINCIPAL =====");
+         do Output.println();
+         do Output.println();
+         do Output.printString("1. Treinar a Tabuada da Adicao");
+         do Output.println();
+         do Output.printString("2. Treinar a Tabuada da Multiplicacao");
+         do Output.println();
+         do Output.printString("3. Gerar Tabuada de um Numero (Adicao)");
+         do Output.println();
+         do Output.printString("4. Gerar Tabuada de um Numero (Multiplicacao)");
+         do Output.println();
+         do Output.printString("5. Desafio Numerico");
+         do Output.println();
+         do Output.printString("6. Jogo do Numero Secreto");
+         do Output.println();
+         do Output.printString("7. Calculadora");
+         do Output.println();
+         do Output.printString("0. Sair");
+         do Output.println();
+         do Output.println();
+         do Output.printString("Escolha uma opcao: ");
+         
+         let escolha = Keyboard.readInt("");
+
+         if (escolha = 1) {
+            do TreinarTabuadaAdd.main();
+         } else {
+            if (escolha = 2) {
+               do TreinarTabuadaMul.main();
+            } else {
+               if (escolha = 3) {
+                  do GerarTabuadaAdd.main();
+               } else {
+                  if (escolha = 4) {
+                     do GerarTabuadaMul.main();
+                  } else {
+                     if (escolha = 5) {
+                        do DesafioNumerico.main();
+                     } else {
+                        if (escolha = 6) {
+                           do NumeroSecreto.main();
+                        } else {
+                           if (escolha = 7) {
+                              do Calculadora.main();
+                           } else {
+                              if (escolha = 0) {
+                                 do Output.println();
+                                 do Output.printString("Saindo...");
+                                 return;
+                              } else {
+                                 //
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+
+      return;
+   }
+}

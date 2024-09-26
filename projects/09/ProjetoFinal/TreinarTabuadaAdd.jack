@@ -1,0 +1,49 @@
+class TreinarTabuadaAdd {
+    function void main() {
+        var int numero1, numero2, resultado, palpite, tentativas, seed, acertos;
+
+        do Screen.clearScreen();
+        do Output.moveCursor(0, 0);
+
+        let seed = RandSeed.getSeed();
+        do Random.setSeed(seed);
+
+        let tentativas = 0;
+        let acertos = 0;
+
+        while (tentativas < 6) {
+            let numero1 = Random.randRange(9) + 1;
+            let numero2 = Random.randRange(9) + 1;
+            let resultado = numero1 + numero2;
+
+            do Output.printInt(numero1);
+            do Output.printString(" + ");
+            do Output.printInt(numero2);
+            do Output.printString(" = ");
+            let palpite = Keyboard.readInt("");
+
+            if (palpite - resultado) {
+                do Output.printString("Voce errou. O resultado era ");
+                do Output.printInt(resultado);
+                do Output.println();
+            } else {
+                do Output.printString("Parabens. Voce acertou.");
+                do Output.println();
+                let acertos = acertos + 1;
+            }
+            do Output.println();
+
+            let tentativas = tentativas + 1;
+        }
+
+        do Output.printString("Fim do jogo. ");
+        do Output.println();
+        do Output.printInt(acertos);
+        do Output.printString(" acerto(s) de 6");
+        do Output.println();
+        do Output.printString("Pressione qualquer tecla para voltar ao MENU. ");
+        do Keyboard.readChar();
+        
+        return;
+    }
+}

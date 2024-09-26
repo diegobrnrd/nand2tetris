@@ -1,0 +1,74 @@
+class Calculadora {
+    function void main() {
+        var int resultado, a, b;
+        var int opcao, adicao, subtracao, multiplicacao, divisao;
+
+        let adicao = 1;
+        let subtracao = 2;
+        let multiplicacao = 3;
+        let divisao = 4;
+
+        do Screen.clearScreen();
+        do Output.moveCursor(0, 0);
+        
+        do Output.printString("Digite o primeiro numero: ");
+        let a = Keyboard.readInt("");
+        
+        do Output.println();
+        do Output.printString("1 -> + (Adicao)");
+        do Output.println();
+        do Output.printString("2 -> - (Subtracao)");
+        do Output.println();
+        do Output.printString("3 -> * (Multiplicacao)");
+        do Output.println();
+        do Output.printString("4 -> / (Divisao)");
+        do Output.println();
+        do Output.println();
+        do Output.printString("Digite a operacao: ");
+        let opcao = Keyboard.readInt("");
+
+        do Output.println();
+        do Output.printString("Digite o segundo numero: ");
+        let b = Keyboard.readInt("");
+
+        if (opcao = adicao) {
+            let resultado = a + b;
+        } else {
+            if (opcao = subtracao) {
+                let resultado = a - b;
+            } else {
+                if (opcao = multiplicacao) {
+                    let resultado = Math.multiply(a, b);
+                } else {
+                    if (opcao = divisao) {
+                        if (b = 0) {
+                            do Output.println();
+                            do Output.printString("Erro: Divisao por zero.");
+                            do Output.println();
+                            do Output.printString("Pressione qualquer tecla para voltar ao MENU. ");
+                            do Keyboard.readChar();
+                            return;
+                        } else {
+                            let resultado = Math.divide(a, b);
+                        }
+                    } else {
+                        do Output.println();
+                        do Output.printString("Operacao invalida");
+                        do Output.println();
+                        do Output.printString("Pressione qualquer tecla para voltar ao MENU. ");
+                        do Keyboard.readChar();
+                        return;
+                    }
+                }
+            }
+        }
+
+        do Output.println();
+        do Output.printString("Resultado: ");
+        do Output.printInt(resultado);
+        do Output.println();
+        do Output.printString("Pressione qualquer tecla para voltar ao MENU. ");
+        do Keyboard.readChar();
+        return;
+    }
+}
